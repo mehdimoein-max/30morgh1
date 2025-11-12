@@ -14,7 +14,7 @@ const iconOptions = Object.keys(Icons).filter(key => key.endsWith('Icon')).map(k
 
 
 const emptyCompany: Company = {
-    slug: '', name: '', logoUrl: '/assets/images/logo-placeholder.webp', slogan: '', sloganImageUrl: '/assets/images/slogan-placeholder.webp', managementIntro: '', shortDescription: '',
+    slug: '', name: '', logoUrl: './assets/images/logo-placeholder.webp', slogan: '', sloganImageUrl: './assets/images/slogan-placeholder.webp', managementIntro: '', shortDescription: '',
     services: [], targetCustomers: [], competitiveAdvantages: [], assets: [],
     brandIdentity: { colors: [], personality: '', tone: '' },
     ceo: { name: '', quote: '' },
