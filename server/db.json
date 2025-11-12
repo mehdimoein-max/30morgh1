@@ -2,7 +2,7 @@
   "name": "هلدینگ سیمرغ",
   "slogan": "اوج‌گیری اقتصاد ایران با بال‌های سیمرغ",
   "intro": "هلدینگ سیمرغ مجموعه‌ای پیشرو و نوآور است که با سرمایه‌گذاری در صنایع کلیدی، به دنبال خلق ارزش پایدار و کمک به رشد و توسعه اقتصادی کشور است. ما به قدرت هم‌افزایی و تخصص ایمان داریم.",
-  "heroImageUrl": "/assets/images/hero-background.webp",
+  "heroImageUrl": "./assets/images/hero-background.webp",
   "vision": {
     "title": "چشم‌انداز ما",
     "text": "تبدیل شدن به معتبرترین و تأثیرگذارترین هلدینگ سرمایه‌گذاری در منطقه، با تمرکز بر نوآوری، پایداری و مسئولیت اجتماعی."
@@ -77,10 +77,10 @@
     {
       "slug": "simorgh-omran",
       "name": "سیمرغ عمران",
-      "logoUrl": "/assets/images/logo-simorgh-omran.webp",
+      "logoUrl": "./assets/images/logo-simorgh-omran.webp",
       "shortDescription": "بازوی عمرانی, ساختمانی و توسعه زیرساختی هلدینگ سیمرغ.",
       "slogan": "می‌سازیم تا سرزمین‌مان شایسته بال‌های سیمرغ باشد",
-      "sloganImageUrl": "/assets/images/slogan-simorgh-omran.webp",
+      "sloganImageUrl": "./assets/images/slogan-simorgh-omran.webp",
       "managementIntro": "سیمرغ عمران بازوی عمرانی، ساختمانی و توسعه زیرساختی هلدینگ سیمرغ است که با رسالت «خلق پروژه‌های ماندگار، ایمن و باکیفیت بر پایه تفکر مهندسی و توسعه پایدار» شکل گرفته است. ما با بهره‌گیری از دانش روز، تیم متخصص و ماشین‌آلات پیشرفته، در تلاشیم تا افق‌های جدیدی در صنعت ساخت‌وساز کشور ترسیم کنیم.",
       "services": [
         {
@@ -168,10 +168,10 @@
     {
       "slug": "simorgh-tech",
       "name": "سیمرغ تک",
-      "logoUrl": "/assets/images/logo-simorgh-tech.webp",
+      "logoUrl": "./assets/images/logo-simorgh-tech.webp",
       "shortDescription": "پیشرو در ارائه راه‌حل‌های نوآورانه فناوری اطلاعات و ارتباطات.",
       "slogan": "فناوری، بالی برای پرواز کسب‌وکار شما",
-      "sloganImageUrl": "/assets/images/slogan-simorgh-tech.webp",
+      "sloganImageUrl": "./assets/images/slogan-simorgh-tech.webp",
       "managementIntro": "سیمرغ تک با هدف ارائه راه‌حل‌های جامع فناوری اطلاعات، از زیرساخت‌های شبکه تا توسعه نرم‌افزارهای اختصاصی، به کسب‌وکارها کمک می‌کند تا در دنیای دیجیتال امروز، پیشرو و رقابتی باقی بمانند. ما آینده را با کد و داده می‌سازیم.",
       "services": [
         {
@@ -266,10 +266,10 @@
     {
       "slug": "simorgh-energy",
       "name": "سیمرغ انرژی",
-      "logoUrl": "/assets/images/logo-simorgh-energy.webp",
+      "logoUrl": "./assets/images/logo-simorgh-energy.webp",
       "shortDescription": "سرمایه‌گذاری و توسعه در حوزه انرژی‌های تجدیدپذیر و بهینه‌سازی مصرف.",
       "slogan": "روشنایی فردا، با انرژی پاک امروز",
-      "sloganImageUrl": "/assets/images/slogan-simorgh-energy.webp",
+      "sloganImageUrl": "./assets/images/slogan-simorgh-energy.webp",
       "managementIntro": "سیمرغ انرژی با درک اهمیت حیاتی انرژی و با نگاهی به آینده‌ای پایدار، در زمینه توسعه نیروگاه‌های خورشیدی و بادی و همچنین ارائه راه‌کارهای هوشمند مدیریت مصرف انرژی فعالیت می‌کند. ما متعهد به حفظ محیط زیست برای نسل‌های آینده هستیم.",
       "services": [
         {

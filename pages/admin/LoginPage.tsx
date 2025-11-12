@@ -9,44 +9,21 @@ const LoginPage: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
-  const handleLogin = async (e: React.FormEvent) => {
+  const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
     setError('');
 
-    try {
-      const response = await fetch('/api/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ username, password }),
-      });
-
-      if (!response.ok) {
-          const result = await response.json().catch(() => ({ message: 'API login failed' }));
-          throw new Error(result.message);
-      }
-      
-      const result = await response.json();
-
-      if (result.success) {
-        localStorage.setItem('isLoggedIn', 'true');
-        navigate('/admin/dashboard');
-      } else {
-        setError(result.message || 'نام کاربری یا رمز عبور اشتباه است.');
-      }
-    } catch (err) {
-      console.log("API not available. Using fallback authentication.");
+    // Simulate a network delay for better UX, then perform local authentication
+    setTimeout(() => {
       if (username === 'admin' && password === 'password') {
         localStorage.setItem('isLoggedIn', 'true');
         navigate('/admin/dashboard');
       } else {
         setError('نام کاربری یا رمز عبور اشتباه است.');
       }
-    } finally {
       setIsLoading(false);
-    }
+    }, 500);
   };
 
   return (

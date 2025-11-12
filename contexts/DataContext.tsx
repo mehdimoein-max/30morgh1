@@ -85,58 +85,36 @@ export const DataProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        const fetchData = async () => {
-            setIsLoading(true);
-            try {
-                const response = await fetch('/api/data');
-                if (!response.ok) {
-                    throw new Error('API fetch failed, using fallback');
-                }
-                const data = await response.json();
-                setHoldingData(hydrateIcons(data));
-                localStorage.setItem('holdingData', JSON.stringify(data)); // Sync localStorage
-            } catch (error) {
-                console.log("API not available. Loading data from local fallback.");
-                const localData = localStorage.getItem('holdingData');
-                if (localData) {
-                    console.log("Loading data from localStorage.");
-                    setHoldingData(hydrateIcons(JSON.parse(localData)));
-                } else {
-                    console.log("localStorage is empty. Loading from initial constants.");
-                    setHoldingData(initialData); // initialData is already hydrated
-                }
-            } finally {
-                setIsLoading(false);
+        setIsLoading(true);
+        try {
+            const localData = localStorage.getItem('holdingData');
+            if (localData) {
+                console.log("Loading data from localStorage.");
+                setHoldingData(hydrateIcons(JSON.parse(localData)));
+            } else {
+                console.log("localStorage is empty. Loading from initial constants and populating storage.");
+                 // Dehydrate to store icon names, not component objects
+                const dataToStore = dehydrateIcons(initialData);
+                localStorage.setItem('holdingData', JSON.stringify(dataToStore));
+                setHoldingData(initialData); // Use the original hydrated data for the state
             }
-        };
-        fetchData();
+        } catch (error) {
+            console.error("Failed to load data, falling back to initial data.", error);
+            setHoldingData(initialData);
+        } finally {
+            setIsLoading(false);
+        }
     }, []);
 
     const updateHoldingData = async (newData: HoldingData) => {
-        const dataToSend = dehydrateIcons(newData);
-
+        const dataToStore = dehydrateIcons(newData);
         try {
-            const response = await fetch('/api/data', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(dataToSend),
-            });
-
-            if (!response.ok) {
-                throw new Error('Failed to save data to API');
-            }
-            // Update local state and localStorage after successful save
+            localStorage.setItem('holdingData', JSON.stringify(dataToStore));
             setHoldingData(newData);
-            localStorage.setItem('holdingData', JSON.stringify(dataToSend));
-            alert('اطلاعات با موفقیت در سرور ذخیره شد!');
-
+            alert('اطلاعات با موفقیت در حافظه مرورگر ذخیره شد.');
         } catch (error) {
-            console.error("Failed to save to API, saving to localStorage as fallback.", error);
-            localStorage.setItem('holdingData', JSON.stringify(dataToSend));
-            setHoldingData(newData);
-            alert('ارتباط با سرور برقرار نیست. اطلاعات به صورت محلی ذخیره شد.');
+            console.error("Failed to save to localStorage.", error);
+            alert('خطایی در ذخیره‌سازی اطلاعات رخ داد.');
         }
     };
     
